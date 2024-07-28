@@ -3,59 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Detail - Stylish Jacket</title>
+    <title>Product Detail</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .carousel-open:checked + .carousel-item {
+            position: static;
+            opacity: 100;
+        }
+        .carousel-item {
+            transition: opacity 0.6s ease-out;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+        .carousel-control {
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
-
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-4">
-                    <!-- Logo -->
-                    <div>
-                        <a href="#" class="flex items-center py-5 px-2 text-gray-700">
-                            <img src="logo.png" alt="Logo" class="h-8 w-8 mr-2">
-                            <span class="font-bold">ASN.Store</span>
-                        </a>
+    <div class="container mx-auto px-4 py-16">
+        <div class="flex flex-wrap -mx-4">
+            <!-- Product Images -->
+            <div class="w-full lg:w-1/2 px-4">
+                <div class="relative w-full">
+                    <input type="radio" name="carousel" id="carousel-1" class="carousel-open" hidden checked>
+                    <div class="carousel-item absolute opacity-0">
+                        <img src="/Assest/Image/jacket.jpeg" alt="Product Image 1">
                     </div>
-                </div>
-                <!-- Menu -->
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="/index.html" class="py-5 px-3 text-gray-700">Home</a>
-                    <a href="/Componets/Products.html" class="py-5 px-3 text-gray-700">Products</a>
-                    <a href="#" class="py-5 px-3 text-gray-700">About</a>
-                    <a href="#" class="py-5 px-3 text-gray-700">Contact</a>
+                    
+                    <input type="radio" name="carousel" id="carousel-2" class="carousel-open" hidden>
+                    <div class="carousel-item absolute opacity-0">
+                        <img src="/Assest/Image/jacket1.jpeg" alt="Product Image 2">
+                    </div>
+                    
+                    <input type="radio" name="carousel" id="carousel-3" class="carousel-open" hidden>
+                    <div class="carousel-item absolute opacity-0">
+                        <img src="/Assest/Image/jacket2.jpeg" alt="Product Image 3">
+                    </div>
+                    
+                    <label for="carousel-1" class="carousel-control prev control-1 absolute left-0 bottom-0 mb-4 text-white hover:text-red-600">‹</label>
+                    <label for="carousel-2" class="carousel-control next control-1 absolute right-0 bottom-0 mb-4 text-white hover:text-red-600">›</label>
+                    
+                    <label for="carousel-2" class="carousel-control prev control-2 absolute left-0 bottom-0 mb-4 text-white hover:text-red-600">‹</label>
+                    <label for="carousel-3" class="carousel-control next control-2 absolute right-0 bottom-0 mb-4 text-white hover:text-red-600">›</label>
+                    
+                    <label for="carousel-3" class="carousel-control prev control-3 absolute left-0 bottom-0 mb-4 text-white hover:text-red-600">‹</label>
+                    <label for="carousel-1" class="carousel-control next control-3 absolute right-0 bottom-0 mb-4 text-white hover:text-red-600">›</label>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <div class="container mx-auto px-4 py-16">
-        <div class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
-            <!-- Product Image -->
-            <div class="md:w-1/2 bg-cover bg-center h-64 md:h-auto" style="background-image: url('https://via.placeholder.com/400');"></div>
             <!-- Product Details -->
-            <div class="md:w-1/2 p-6">
-                <h1 class="text-gray-900 font-bold text-2xl">Stylish Jacket</h1>
-                <p class="mt-2 text-gray-600 text-sm">This stylish jacket is perfect for the winter season. Made from high-quality materials, it ensures both warmth and style.</p>
+            <div class="w-full lg:w-1/2 px-4">
+                <h1 class="text-gray-900 font-bold text-3xl">Stylish Jacket</h1>
+                <p class="mt-2 text-gray-600">This stylish jacket is perfect for the winter season. Made from high-quality materials, it ensures both warmth and style.</p>
                 <div class="mt-4">
-                    <h2 class="text-gray-900 font-bold text-xl">Available Sizes</h2>
-                    <div class="flex space-x-2 mt-2">
-                        <span class="border border-gray-400 rounded-full py-1 px-3 text-gray-700">S</span>
-                        <span class="border border-gray-400 rounded-full py-1 px-3 text-gray-700">M</span>
-                        <span class="border border-gray-400 rounded-full py-1 px-3 text-gray-700">L</span>
-                        <span class="border border-gray-400 rounded-full py-1 px-3 text-gray-700">XL</span>
+                    <span class="text-gray-700 font-bold text-xl">$79.99</span>
+                </div>
+                <div class="mt-4">
+                    <h2 class="text-gray-700 text-lg">Size</h2>
+                    <div class="flex mt-2">
+                        <button class="border rounded-full w-10 h-10 text-center mr-2">S</button>
+                        <button class="border rounded-full w-10 h-10 text-center mr-2">M</button>
+                        <button class="border rounded-full w-10 h-10 text-center mr-2">L</button>
+                        <button class="border rounded-full w-10 h-10 text-center">XL</button>
                     </div>
                 </div>
-                <div class="flex item-center justify-between mt-6">
-                    <h1 class="text-gray-700 font-bold text-xl">$79.99</h1>
-                    <a href="/Componets/Cart.html" class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">Add to Cart</a>
-                    <button class="px-3 py-2 bg-green-500 text-white text-xs font-bold uppercase rounded">Buy Now</button>
+                <div class="mt-4">
+                    <button class="px-6 py-2 bg-gray-800 text-white text-sm font-bold uppercase rounded">Add to Cart</button>
+                    <button class="px-6 py-2 bg-blue-800 text-white text-sm font-bold uppercase rounded ml-2">Buy Now</button>
                 </div>
             </div>
         </div>
     </div>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <!-- About Us -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+                    <h3 class="font-bold text-xl mb-4">About Us</h3>
+                    <p class="text-gray-400">We are a clothing store committed to providing the best quality products to our customers. Our collection is carefully curated to offer a variety of styles for all seasons.</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+                    <h3 class="font-bold text-xl mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="/index.html" class="text-gray-400 hover:text-gray-300">Home</a></li>
+                        <li><a href="/components/products.html" class="text-gray-400 hover:text-gray-300">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gray-300">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-gray-300">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8 lg:mb-0">
+                    <h3 class="font-bold text-xl mb-4">Contact Us</h3>
+                    <p class="text-gray-400">Email: info@asnstore.com</p>
+                    <p class="text-gray-400">Phone: +1 234 567 890</p>
+                    <p class="text-gray-400">Address: 1234 Street, City, State, Country</p>
+                </div>
+                <!-- Follow Us -->
+                <div class="w-full sm:w-1/2 lg:w-1/4 px-4">
+                    <h3 class="font-bold text-xl mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 mt-8">
+                &copy; 2024 ASN.Store. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
+    <!-- Font Awesome for social media icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
